@@ -1,0 +1,22 @@
+!Reload Reason
+sh logging onboard switch 1 rp active uptime detail
+
+!Softmax output drops
+conf t
+  qos queue-softmax-multiplier 4800
+end
+
+!Interface Traffic Counters
+sh ip traffic
+sh ip traffic interface twe1/0/1
+sh int twe1/0/1 counters errors
+sh int twe1/0/1 controller
+sh int po1 counters etherchannel
+
+!Other Counters
+sh stackwise-virtual link detail
+sh int po1 counters etherchannel
+sh bfd drops
+sh platform hardware fed switch active qos queue stats internal cpu policer
+sh platform software fed switch active punt cpuq all
+sh platform software fed switch active punt cause summary
