@@ -1,0 +1,58 @@
+!Basic Capture any in both Directions
+monitor capture CAP interface GigabitEthernet1/0/1 both
+monitor capture CAP buffer circular size 50
+monitor capture CAP limit duration 180
+monitor capture CAP match any
+monitor capture CAP export flash:CAP.pcap
+!
+!
+monitor capture CAP stop
+!
+monitor capture CAP start
+!
+monitor capture CAP clear
+no monitor capture CAP
+--------------------------------------------------------
+!Basic between IP addresses
+monitor capture CAP interface GigabitEthernet1/0/1 both
+monitor capture CAP match ipv4 host 192.168.0.1 host 192.168.1.1
+monitor capture CAP buffer circular size 50
+monitor capture CAP limit duration 180
+monitor capture mycap export flash:CAP.pcap
+!
+!
+monitor capture CAP stop
+!
+monitor capture CAP start
+!
+monitor capture CAP clear
+no monitor capture CAP
+--------------------------------------------------------
+
+--------------------------------------------------------
+!Limit by how many packets capture
+monitor capture CAP limit packets 1000
+
+!limit by Duration
+monitor capture CAP limit duration 180
+--------------------------------------------------------
+!Show capture on switch
+show monitor capture CAP buffer brief
+show monitor capture CAP buffer detailed     <--- Lots of output
+
+
+!show capture settings/summary
+show monitor capture CAP parameter
+show monitor capture CAP capture-statistics
+
+!Export
+monitor capture CAP export flash:CAP.pcap
+monitor capture CAP stop_export  
+
+
+monitor capture CAP stop
+monitor capture CAP start
+
+!Clear settings
+monitor capture CAP clear
+
