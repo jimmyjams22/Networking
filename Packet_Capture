@@ -3,7 +3,7 @@ monitor capture CAP interface GigabitEthernet1/0/1 both
 monitor capture CAP buffer circular size 50
 monitor capture CAP limit duration 180
 monitor capture CAP match any
-monitor capture CAP export location flash:CAP.pcap
+monitor capture CAP export location flash:CAP.pcap  <---- (Execute after capture, that way you can still use "show monitor captue CAP buffer brief")
 !
 !
 monitor capture CAP stop
