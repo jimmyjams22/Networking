@@ -1,0 +1,10 @@
+!Full Syntax to SCP a file from a switch
+
+scp -O USERNAME@SWITCH_IP:flash:/ .
+
+!Config needs to be applied to enable this
+!
+configure terminal
+ip scp server enable
+end
+!
