@@ -1,0 +1,2 @@
+Find crashlogs:
+dir /recur all-filesystems | inc Directory of|crashinfo_|core.gz|fullcore|system-report|kernel.rp|threshold_lowmem_info
